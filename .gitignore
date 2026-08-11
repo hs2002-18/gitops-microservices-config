@@ -1,4 +1,12 @@
 # ============================================================
+# AWS CLI
+# ============================================================
+
+# AWS CLI configuration and credentials
+aws/
+awscliv2.zip
+
+# ============================================================
 # Terraform
 # ============================================================
 
@@ -12,11 +20,7 @@ terraform.tfstate
 terraform.tfstate.*
 
 # Terraform variable files containing environment-specific values
-*.tfvars
 *.tfvars.json
-
-# Allow example variable files
-!*.tfvars.example
 
 # Terraform crash logs
 crash.log
