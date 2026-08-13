@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-prod
+  namespace: argocd
+
+spec:
+  project: gitops-project
+
+  source:
+    repoURL: https://github.com/hs2002-18/gitops-microservices-config.git
+    targetRevision: main
+    path: helm/gitops-app
+
+    helm:
+      valueFiles:
+        - values-prod.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gitops-prod
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
