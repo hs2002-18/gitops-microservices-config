@@ -1,0 +1,38 @@
+namespace: gitops
+
+frontend:
+  replicas: 1
+  image:
+    repository: harshshrimali319/gitops-frontend
+    tag: "1.0.0"
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+
+backend:
+  replicas: 1
+  image:
+    repository: harshshrimali319/gitops-backend
+    tag: "1.0.0"
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8000
+    targetPort: 8000
+  environment: DEV
+
+redis:
+  replicas: 1
+  image:
+    repository: redis
+    tag: "7-alpine"
+    pullPolicy: IfNotPresent
+  service:
+    port: 6379
+
+ingress:
+  enabled: true
+  className: nginx
+  host: gitops.local

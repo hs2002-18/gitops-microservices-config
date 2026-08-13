@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-backend
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: gitops-backend
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app: gitops-backend
+  template:
+    metadata:
+      labels:
+        app: gitops-backend
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.backend.service.targetPort }}
+          env:
+            - name: REDIS_HOST
+              value: "gitops-redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: ENVIRONMENT
+              value: "{{ .Values.backend.environment }}"

@@ -1,0 +1,19 @@
+namespace: gitops-prod
+
+frontend:
+  replicas: 2
+  image:
+    tag: "1.0.0"
+
+backend:
+  replicas: 2
+  image:
+    tag: "1.0.0"
+  environment: PROD
+
+redis:
+  replicas: 1
+
+ingress:
+  enabled: true
+  host: gitops-prod.local
