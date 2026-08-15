@@ -8,7 +8,7 @@ frontend:
 backend:
   replicas: 1
   image:
-    tag: "1.0.0"
+    tag: "1.1.0"
   environment: DEV
 
 redis:
