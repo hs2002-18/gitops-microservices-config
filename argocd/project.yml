@@ -10,6 +10,8 @@ spec:
     - https://github.com/hs2002-18/gitops-microservices-config.git
 
   destinations:
+    - namespace: argocd
+      server: https://kubernetes.default.svc
     - namespace: gitops-dev
       server: https://kubernetes.default.svc
     - namespace: gitops-prod
