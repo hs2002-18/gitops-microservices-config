@@ -3,6 +3,9 @@ kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
   namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.email: harshshrimali319@gmail.com
+    notifications.argoproj.io/subscribe.on-sync-failed.email: harshshrimali319@gmail.com
 data:
   service.email.gmail: |
     host: smtp.gmail.com
