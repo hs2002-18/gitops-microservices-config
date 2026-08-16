@@ -4,7 +4,7 @@ metadata:
   name: argocd-notifications-cm
   namespace: argocd
 data:
-  service.email.gmail: |
+  service.email: |
     host: smtp.gmail.com
     port: 587
     from: harshshrimali319@gmail.com
