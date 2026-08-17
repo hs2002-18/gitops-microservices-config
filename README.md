@@ -13,7 +13,7 @@ This project demonstrates a complete **CI/CD + GitOps workflow**, where applicat
 
 ### Repo 1 — Application CI/CD
 
-**Repository:** [[ADD REPO 1 LINK HERE](https://github.com/hs2002-18/gitops-microservices-app.git)]
+**Repository:** [[Repo 1](https://github.com/hs2002-18/gitops-microservices-app.git)]
 
 Repo 1 is responsible for:
 
