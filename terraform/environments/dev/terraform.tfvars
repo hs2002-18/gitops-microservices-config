@@ -1,6 +1,0 @@
-aws_region       = "ap-south-1"
-environment      = "dev"
-instance_type    = "c7i-flex.large"
-ami_id           = "ami-01a00762f46d584a1"
-key_name         = "project"
-allowed_ssh_cidr = "0.0.0.0/0"
